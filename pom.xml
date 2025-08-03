@@ -81,7 +81,19 @@
         <docker.image.prefix>springcommunity</docker.image.prefix>
 
     </properties>
-
+<distributionManagement>
+  <repository>
+    <id>maven-releases</id>
+    <!-- CHANGE HERE by your team Nexus server -->
+    <url>http://192.168.1.99:8081/repository/maven-releases/</url>
+  </repository>
+  <snapshotRepository>
+    <id>maven-snapshots</id>
+    <!-- CHANGE HERE by your team Nexus server -->
+    <url>http://13.126.124.159:8081/repository/maven-releases/</url>
+  </snapshotRepository>
+</distributionManagement>
+         
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -98,17 +110,7 @@
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
-        </dependencies>
-        <repository>
-             <id>maven-releases</id>
-             <!-- CHANGE HERE by your team Nexus server -->
-             <url>http://192.168.1.99:8081/repository/maven-releases/</url>
-       </repository>
-       <snapshotRepository>
-             <id>maven-snapshots</id>
-             <!-- CHANGE HERE by your team Nexus server -->
-             <url>http://13.126.124.159:8081/repository/maven-releases/</url>
-       </snapshotRepository>   
+        </dependencies>  
     </dependencyManagement>
 
     <dependencies>
